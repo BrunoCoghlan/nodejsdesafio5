@@ -39,3 +39,9 @@ export const findBy = async ({ precio_min, precio_max, categoria, metal }) => {
   }
   return await db(query, values)
 }
+
+export const findById = async ({ id }) => {
+  const query = 'SELECT * FROM inventario WHERE id = $1'
+  console.log(id)
+  return await db(query, [id])
+}
